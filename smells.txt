@@ -1,14 +1,16 @@
 Ruth Dankwah
 Chris Karn
 
-1. Duplicated code
+Q1. Discuss with your partner what code smell this is and what refactoring you can apply to remove the repeated statements. 
+	This code smell is duplicated code. We solved it by extracting the method and creating a function that can be called
+	instead of repeating the code again and again.
+Q2.
 
-2.
+Q3. Do you think that this new 'updateAndTrim' method belongs to 'Nodes' class? Discuss with your partner what code smell this is and what refactoring could remove it. 
+	This code smell is feature envy, meaning it belongs in a different class. This can be solved by moving the method to its appropriate class.
 
-3.
+Q4.
 
-4.
+Q5.
 
-5.
-
-6.
+Q6.
