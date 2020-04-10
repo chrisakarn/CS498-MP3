@@ -10,7 +10,7 @@ Q3. Do you think that this new 'updateAndTrim' method belongs to 'Nodes' class? 
 	This code smell is feature envy, meaning it belongs in a different class. This can be solved by moving the method to its appropriate class.
 
 Q4. Discuss with your partner how to eliminate this repeated code.
-	You can eliminate the repeated code by using the extract method; inline method, placing calls for the new method in both places.
+	You can eliminate the repeated code by using the extract method; the inline method, placing calls for the new method in both places
 
 Q5.
 
