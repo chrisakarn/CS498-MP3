@@ -9,7 +9,8 @@ Q2.
 Q3. Do you think that this new 'updateAndTrim' method belongs to 'Nodes' class? Discuss with your partner what code smell this is and what refactoring could remove it. 
 	This code smell is feature envy, meaning it belongs in a different class. This can be solved by moving the method to its appropriate class.
 
-Q4.
+Q4. Discuss with your partner how to eliminate this repeated code.
+	You can eliminate the repeated code by using the extract method; inline method, placing calls for the new method in both places.
 
 Q5.
 
