@@ -1,4 +1,4 @@
-/*
+*
  * The MIT License
  *
  * Copyright 2013 Jesse Glick, Geoff Cummings
@@ -32,7 +32,9 @@ import hudson.tasks.BuildStepMonitor;
 import hudson.tasks.Publisher;
 import hudson.util.LogTaskListener;
 
+import java.io.IOException;
 import java.util.Collections;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -84,8 +86,7 @@ public class RunParameterDefinitionTest {
         FreeStyleProject project = j.createFreeStyleProject("project");
         FreeStyleBuild successfulBuild = project.scheduleBuild2(0).get();
 
-        project.getPublishersList().replaceBy(Collections.singleton(new ResultPublisher(Result.UNSTABLE)));
-        FreeStyleBuild unstableBuild = project.scheduleBuild2(0).get();
+        unstableRefact(project);
 
         project.getPublishersList().replaceBy(Collections.singleton(new ResultPublisher(Result.FAILURE)));
         FreeStyleBuild failedBuild = project.scheduleBuild2(0).get();
@@ -109,6 +110,11 @@ public class RunParameterDefinitionTest {
                      build.getEnvironment(new LogTaskListener(LOGGER, Level.INFO)).get("RUN_NUMBER"));
     }
 
+	private void unstableRefact(FreeStyleProject project) throws IOException, InterruptedException, ExecutionException {
+		project.getPublishersList().replaceBy(Collections.singleton(new ResultPublisher(Result.UNSTABLE)));
+        FreeStyleBuild unstableBuild = project.scheduleBuild2(0).get();
+	}
+
     
     @Test
     public void testALLFilter() throws Exception {
@@ -116,8 +122,7 @@ public class RunParameterDefinitionTest {
         FreeStyleProject project = j.createFreeStyleProject("project");
         FreeStyleBuild successfulBuild = project.scheduleBuild2(0).get();
 
-        project.getPublishersList().replaceBy(Collections.singleton(new ResultPublisher(Result.UNSTABLE)));
-        FreeStyleBuild unstableBuild = project.scheduleBuild2(0).get();
+        unstableRefact(project);
 
         project.getPublishersList().replaceBy(Collections.singleton(new ResultPublisher(Result.FAILURE)));
         FreeStyleBuild failedBuild = project.scheduleBuild2(0).get();
@@ -147,8 +152,7 @@ public class RunParameterDefinitionTest {
         FreeStyleProject project = j.createFreeStyleProject("project");
         FreeStyleBuild successfulBuild = project.scheduleBuild2(0).get();
 
-        project.getPublishersList().replaceBy(Collections.singleton(new ResultPublisher(Result.UNSTABLE)));
-        FreeStyleBuild unstableBuild = project.scheduleBuild2(0).get();
+        unstableRefact(project);
 
         project.getPublishersList().replaceBy(Collections.singleton(new ResultPublisher(Result.FAILURE)));
         FreeStyleBuild failedBuild = project.scheduleBuild2(0).get();
@@ -210,8 +214,7 @@ public class RunParameterDefinitionTest {
         FreeStyleProject project = j.createFreeStyleProject("project");
         FreeStyleBuild successfulBuild = project.scheduleBuild2(0).get();
 
-        project.getPublishersList().replaceBy(Collections.singleton(new ResultPublisher(Result.UNSTABLE)));
-        FreeStyleBuild unstableBuild = project.scheduleBuild2(0).get();
+        unstableRefact(project);
 
         project.getPublishersList().replaceBy(Collections.singleton(new ResultPublisher(Result.FAILURE)));
         FreeStyleBuild failedBuild = project.scheduleBuild2(0).get();
