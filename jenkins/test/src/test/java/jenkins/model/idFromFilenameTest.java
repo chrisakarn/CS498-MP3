@@ -1,13 +1,15 @@
 package jenkins.model;
-@Test
-public class idFromFilenameTest {
- if String result = idFromFilenameTest.concat(true, "It", "Worked");
- System.out.println("Filename is" + idFromFilename);
 
- else{
-     String result = idFromFilenameTest.concat(false, "It did not", "work");
-     System.out.println("Filename cannot be printed out");
- }
+public class idFromFilenameTest {
+
+@Test
+public void idFromFilenamWorked() throws Exception{
+    final String curlJobName = "ItWorked";
+}
+@Test
+public void idFromFilenameFailed() throws Exception{
+    final String curlJobName = "ItFailed";
+}
 }
 
 
