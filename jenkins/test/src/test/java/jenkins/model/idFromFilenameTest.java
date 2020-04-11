@@ -4,12 +4,11 @@ public class idFromFilenameTest {
 
 @Test
 public void idFromFilenamWorked() throws Exception{
-    final String curlJobName = "ItWorked";
+    final String curlJobName = stringUtil.idFromFilename(true, "ItWorked");
 }
 @Test
 public void idFromFilenameFailed() throws Exception{
-    final String curlJobName = "ItFailed";
+    final String curlJobName = stringUtil.idFromFilename(false,"ItFailed");
 }
 }
-
 
