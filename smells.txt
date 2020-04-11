@@ -14,4 +14,12 @@ Q4. Discuss with your partner how to eliminate this repeated code.
 
 Q5.
 
-Q6.
+Q6. The duplicated code line is below. It was repeated multiple times throughout the code. To fix this repeated code, we used the extracted method. By using eclipse, we were able to just highlight the duplicated code, then used the refactor tool for this question.
+ 
+      -----------------------------------------------------------------------------------------------------------------------
+      project.getPublishersList().replaceBy(Collections.singleton(new ResultPublisher(Result.UNSTABLE)));
+        FreeStyleBuild unstableBuild = project.scheduleBuild2(0).get();
+   
+      The refactored version of the above code became
+     unstableRefact(project);
+    --------------------------------------------------------------------------------------------------------------------------
